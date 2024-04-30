@@ -2,3 +2,22 @@
 Dependencies installation:
 -> npm install -g npm@10.5.1
 -> npm i express body-parser bcrypt cors dotenv gridfs-stream multer multer-gridfs-storage helmet morgan jsonwebtoken mongoose
+
+2. Client
+Dependencies installation:
+-> react-redux : for state management
+-> @reduxjs/toolkit : for easy use of redux(recommended)
+-> redux-persist : store state to local state
+-> react-dropzone : component that will handle file upload in frontend
+-> dotenv : for environment variables
+-> formik : for form handeling
+-> yup : for form validation
+-> react-router-dom : for navigation
+//UI components
+-> mui/material
+-> @emotion/react
+-> @emotion/styled
+-> @mui/icons-material
+
+Problem that may arrise:
+-> while installing Dependencies there mey occur problem due to incompatible and depricated version. One way to fix this is by using --force flag or look into the official documentation before installation
