@@ -10,7 +10,10 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import { register } from './controllers/auth.js'
 import { createPost } from './controllers/posts.js'
+// import { posts, users } from './data/index.js'
 import { verifyToken } from './middleware/auth.js'
+// import Post from './models/Post.js'
+// import User from './models/User.js'
 import authRoutes from './routes/auth.js'
 import postRoutes from './routes/posts.js'
 import userRoutes from './routes/users.js'
@@ -60,5 +63,9 @@ mongoose
   })
   .then(() => {
     app.listen(PORT, () => console.log(`Running on Server Port: ${PORT}`))
+
+    // Add this data only one time //
+    // User.insertMany(users)
+    // Post.insertMany(posts)
   })
   .catch((error) => console.log(`${error} did not connect`))
