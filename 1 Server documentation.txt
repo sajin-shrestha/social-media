@@ -21,3 +21,4 @@ Dependencies installation:
 
 Problem that may arrise:
 -> while installing Dependencies there mey occur problem due to incompatible and depricated version. One way to fix this is by using --force flag or look into the official documentation before installation
+-> npm install react@latest react-dom@latest 
