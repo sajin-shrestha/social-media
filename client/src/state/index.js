@@ -1,49 +1,47 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  mode: 'light',
+  mode: "light",
   user: null,
   token: null,
   posts: [],
-}
+};
 
 export const authSlice = createSlice({
-  name: 'auth',
+  name: "auth",
   initialState,
   reducers: {
-    //just like a regular function to update or change the above initialState
     setMode: (state) => {
-      state.mode = state.mode === 'light' ? 'dark' : 'light'
+      state.mode = state.mode === "light" ? "dark" : "light";
     },
     setLogin: (state, action) => {
-      state.user = action.playload.user
-      state.token = action.playload.token
+      state.user = action.payload.user;
+      state.token = action.payload.token;
     },
     setLogout: (state) => {
-      state.user = null
-      state.token = null
+      state.user = null;
+      state.token = null;
     },
     setFriends: (state, action) => {
       if (state.user) {
-        state.user.friends = action.playload.friends
+        state.user.friends = action.payload.friends;
       } else {
-        console.log('user friends not existent :(')
+        console.error("user friends non-existent :(");
       }
     },
     setPosts: (state, action) => {
-      state.posts = action.playload.posts
+      state.posts = action.payload.posts;
     },
     setPost: (state, action) => {
       const updatedPosts = state.posts.map((post) => {
-        if (post._id === action.playloaad.post_id) return action.playload.post
-        return post
-      })
-      state.posts = updatedPosts
+        if (post._id === action.payload.post._id) return action.payload.post;
+        return post;
+      });
+      state.posts = updatedPosts;
     },
   },
-})
+});
 
 export const { setMode, setLogin, setLogout, setFriends, setPosts, setPost } =
-  authSlice.actions
-
-export default authSlice.reducer
+  authSlice.actions;
+export default authSlice.reducer;
